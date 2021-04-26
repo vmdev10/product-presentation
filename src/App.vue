@@ -4,7 +4,7 @@
       <img class="burguer" src="./assets/burguer.png" alt="Hamburguer" />
       <div class="shadow"></div>
       <div class="card-content">
-        <p class="subtitle">RETRO</p>
+        <p class="subtitle">SPACE</p>
         <h3 class="title">BURGUER</h3>
       </div>
     </div>
@@ -16,6 +16,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+@keyframes float{
+	0%,100%{
+		transform:translatey(0)
+	}
+	50%{
+		transform:translatey(-20px)
+	}
+}
+.burguer {
+     animation: float 6s ease-in-out infinite;
 }
 
 .container {
@@ -42,9 +54,10 @@
   width: 200px;
   height: 100px;
   position: absolute;
-  top: 10px;
+  top: 12px;
   right: -10px;
 
+  transform: rotate(20deg);
   z-index: 99;
 }
 
