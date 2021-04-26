@@ -1,8 +1,12 @@
 <template>
   <div class="container">
     <div class="card">
-      <img class="shoes" src="./assets/TENIS.svg" alt="Tênis" />
+      <img class="burguer" src="./assets/burguer.png" alt="Hamburguer" />
       <div class="shadow"></div>
+      <div class="card-content">
+        <p class="subtitle">RETRO</p>
+        <h3 class="title">BURGUER</h3>
+      </div>
     </div>
   </div>
 </template>
@@ -34,16 +38,18 @@
   border-radius: 16px 50px 16px 16px;
 }
 
-.shoes {
+.burguer {
+  width: 200px;
+  height: 100px;
   position: absolute;
-  top: -200px;
-  right: -120px;
+  top: 10px;
+  right: -10px;
 
   z-index: 99;
 }
 
 .shadow {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
 
@@ -67,5 +73,26 @@
   );
   border-radius: 50%;
   transform: rotate(20deg);
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
+
+  padding: 120px 20px 0;
+}
+
+.subtitle {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem;
+  line-height: 17px;
+
+}
+
+.title {
+  margin: 0.5rem 0;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.5rem;
+  line-height: 32px;
 }
 </style>
