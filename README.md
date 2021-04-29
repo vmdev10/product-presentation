@@ -1,3 +1,7 @@
+<img src="">
+
+
+
 # product-presentation
 
 ## Project setup

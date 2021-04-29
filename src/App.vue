@@ -13,194 +13,53 @@
 
         <div class="actions-container mt-4">
           <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingOne">
+            <div
+              v-for="option in options"
+              :key="option.label"
+              class="accordion-item"
+            >
+              <h2 class="accordion-header" v-bind:id="'heading'+option.label">
                 <button
                   class="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseOne"
+                  v-bind:data-bs-target="'#'+option.label"
                   aria-expanded="false"
-                  aria-controls="flush-collapseOne"
+                  v-bind:aria-controls="'heading'+option.label"
                 >
-                  Pães
+                  {{ option.label }}
                 </button>
               </h2>
               <div
-                id="flush-collapseOne"
+                v-bind:id="option.label"
                 class="accordion-collapse collapse"
-                aria-labelledby="flush-headingOne"
+                v-bind:aria-labelledby="option.label"
                 data-bs-parent="#accordionFlushExample"
               >
                 <div class="accordion-body">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" v-model="checkedNames" value="Pão Americano" id="american" checked>
-                    <label class="form-check-label" for="american">
-                      Pão Americano
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      v-model="checkedNames"
+                      :value="option.data"
+                      v-bind:id="option.data"
+                      checked
+                    />
+                    <label class="form-check-label" v-bind:for="option.data">
+                      {{option.data}}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" v-model="checkedNames" value="Pão Integral" id="integral">
-                    <label class="form-check-label" for="integral">
-                      Pão Integral
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingTwo">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="flush-collapseTwo"
-                >
-                  Queijos
-                </button>
-              </h2>
-              <div
-                id="flush-collapseTwo"
-                class="accordion-collapse collapse"
-                aria-labelledby="flush-headingTwo"
-                data-bs-parent="#accordionFlushExample"
-              >
-                <div class="accordion-body">
-                    <div class="form-check">
-                    <input class="form-check-input" type="checkbox" v-model="checkedNames" id="cheddar" value="Queijo Cheddar" checked>
-                    <label class="form-check-label" for="cheddar">
-                      Queijo Cheddar
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" v-model="checkedNames" id="mussarela" value="Queijo Mussarela">
-                    <label class="form-check-label" for="mussarela">
-                      Queijo Mussarela
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingThree">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseThree"
-                  aria-expanded="false"
-                  aria-controls="flush-collapseThree"
-                >
-                  Carnes
-                </button>
-              </h2>
-              <div
-                id="flush-collapseThree"
-                class="accordion-collapse collapse"
-                aria-labelledby="flush-headingThree"
-                data-bs-parent="#accordionFlushExample"
-              >
-                <div class="accordion-body">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" v-model="checkedNames" id="beef" value="Carne Bovina" checked>
-                    <label class="form-check-label" for="beef">
-                      Carne Bovina
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" v-model="checkedNames" id="chicken" value="Peito De Frango Empanado">
-                    <label class="form-check-label" for="chicken">
-                      Peito De Frango Empanado
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingFour">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseFour"
-                  aria-expanded="false"
-                  aria-controls="flush-collapseFour"
-                >
-                  Molhos
-                </button>
-              </h2>
-              <div
-                id="flush-collapseFour"
-                class="accordion-collapse collapse"
-                aria-labelledby="flush-headingFour"
-                data-bs-parent="#accordionFlushExample"
-              >
-                <div class="accordion-body">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" v-model="checkedNames" id="barbecue" value="Molho Barbecue" checked>
-                    <label class="form-check-label" for="barbecue">
-                      Molho Barbecue
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" v-model="checkedNames" id="mayonnaise" value="Maionese Temperada">
-                    <label class="form-check-label" for="mayonnaise">
-                      Maionese Temperada
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingFive">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseFive"
-                  aria-expanded="false"
-                  aria-controls="flush-collapseFive"
-                >
-                  Adicionais
-                </button>
-              </h2>
-              <div
-                id="flush-collapseFive"
-                class="accordion-collapse collapse"
-                aria-labelledby="flush-headingFive"
-                data-bs-parent="#accordionFlushExample"
-              >
-                <div class="accordion-body">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" v-model="checkedNames" id="sausage" value="Calabresa" checked>
-                    <label class="form-check-label" for="sausage">
-                      Calabresa
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" v-model="checkedNames" id="bacon" value="Bacon">
-                    <label class="form-check-label" for="bacon">
-                      Bacon
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" v-model="checkedNames" id="onion" value="Cebola Caramelizada">
-                    <label class="form-check-label" for="onion">
-                      Cebola Caramelizada
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" v-model="checkedNames" id="lettuce" value="Alface">
-                    <label class="form-check-label" for="lettuce">
-                      Alface
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" v-model="checkedNames" id="tomato" value="Tomate">
-                    <label class="form-check-label" for="tomato">
-                      Tomate
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      v-model="checkedNames"
+                      :value="option.data2"
+                      v-bind:id="option.data2"
+                    />
+                    <label class="form-check-label" v-bind:for="option.data2">
+                      {{ option.data2 }}
                     </label>
                   </div>
                 </div>
@@ -217,15 +76,17 @@
 export default {
   data() {
     return {
-      checkedNames: []
-    }
+      checkedNames: [],
+      options: [
+        { label: "Pães", data: "Pão Americano", data2: "Pão Integral" },
+        { label: "Queijos", data: "Queijo Cheddar", data2: "Queijo Mussarela" },
+        { label: "Carnes", data: "Dupla Carne Bovina", data2: "Pedações de Peito de Frango Empanado" },
+        { label: "Molhos", data: "Molho Barbecue", data2: "Maionese Temperada" },
+        { label: "Acompanhamentos", data: "Bacon", data2: "Calabresa" },
+      ]
+    };
   },
-  methods: {
-    isChecked() {
-
-    }
-  }
-}
+};
 </script>
 
 <style scoped>
@@ -352,7 +213,7 @@ export default {
 }
 
 .accordion-button::after {
-  background-image: url('./assets/plus-icon.svg');
+  background-image: url("./assets/plus-icon.svg");
   background-size: 0.8rem;
   background-repeat: no-repeat;
 }
