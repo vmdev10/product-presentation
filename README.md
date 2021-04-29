@@ -16,7 +16,7 @@
   <li>Logo alterada para um hambúrguer com animação flutuante, fazendo referência ao nome da criação</li>
   <li>Título alterado conforme a necessidade do produto</li>
   <li>Descrição das opções selecionadas pelo usuário apresentadas de forma dinâmica na aplicação</li>
-  <li>Iplementação de um accordion dinâmico com as opções que podem ser selecionadas pelo usuário, referentes ao produto.</li>
+  <li>Implementação de um accordion dinâmico com as opções que podem ser selecionadas pelo usuário, referentes ao produto.</li>
  </ul>
 
 # Pré-requisitos
