@@ -6,8 +6,8 @@
       <div class="card-content">
         <p class="subtitle">SPACE</p>
         <h3 class="title">BURGUER</h3>
-        <h4 class="description">
-          {{ checkedNames }}
+        <h4 v-for="composition in checkedNames" :key="composition" class="description">
+            {{ composition }}
         </h4>
         <h4 class="price">R$16,00</h4>
 
@@ -85,7 +85,7 @@ export default {
         { label: "Acompanhamentos", data: "Bacon", data2: "Calabresa" },
       ]
     };
-  },
+  }
 };
 </script>
 
