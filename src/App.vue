@@ -6,9 +6,16 @@
       <div class="card-content">
         <p class="subtitle">SPACE</p>
         <h3 class="title">BURGUER</h3>
-        <h4 v-for="composition in checkedNames" :key="composition" class="description">
+        <span
+          v-for="(composition, index) in checkedNames"
+          :key="composition"
+          class="description"
+        >
+          <span v-if="checkedNames.length - 1 == index">
             {{ composition }}
-        </h4>
+          </span>
+          <span v-else> {{ composition + ", " }} </span>
+        </span>
         <h4 class="price">R$16,00</h4>
 
         <div class="actions-container mt-4">
@@ -18,14 +25,14 @@
               :key="option.label"
               class="accordion-item"
             >
-              <h2 class="accordion-header" v-bind:id="'heading'+option.label">
+              <h2 class="accordion-header" v-bind:id="'heading' + option.label">
                 <button
                   class="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
-                  v-bind:data-bs-target="'#'+option.label"
+                  v-bind:data-bs-target="'#' + option.label"
                   aria-expanded="false"
-                  v-bind:aria-controls="'heading'+option.label"
+                  v-bind:aria-controls="'heading' + option.label"
                 >
                   {{ option.label }}
                 </button>
@@ -47,7 +54,7 @@
                       checked
                     />
                     <label class="form-check-label" v-bind:for="option.data">
-                      {{option.data}}
+                      {{ option.data }}
                     </label>
                   </div>
                   <div class="form-check">
@@ -80,12 +87,20 @@ export default {
       options: [
         { label: "Pães", data: "Pão Americano", data2: "Pão Integral" },
         { label: "Queijos", data: "Queijo Cheddar", data2: "Queijo Mussarela" },
-        { label: "Carnes", data: "Dupla Carne Bovina", data2: "Pedações de Peito de Frango Empanado" },
-        { label: "Molhos", data: "Molho Barbecue", data2: "Maionese Temperada" },
+        {
+          label: "Carnes",
+          data: "Dupla Carne Bovina",
+          data2: "Pedações de Peito de Frango Empanado",
+        },
+        {
+          label: "Molhos",
+          data: "Molho Barbecue",
+          data2: "Maionese Temperada",
+        },
         { label: "Acompanhamentos", data: "Bacon", data2: "Calabresa" },
-      ]
+      ],
     };
-  }
+  },
 };
 </script>
 
@@ -179,7 +194,7 @@ export default {
   font-family: "Bebas Neue", cursive;
   color: rgb(255, 17, 0);
 
-  font-size: 2.5rem;
+  font-size: 3rem;
   line-height: 17px;
 }
 
@@ -187,7 +202,7 @@ export default {
   font-family: "Bebas Neue", cursive;
   color: rgb(255, 17, 0);
 
-  margin: 0.5rem 0 1rem 0;
+  margin: 1rem 0 1rem 0;
 
   font-size: 3rem;
   line-height: 32px;
